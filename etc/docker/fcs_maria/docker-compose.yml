@@ -1,0 +1,11 @@
+version: "3"
+services:
+  fcs_services:
+    # image: fcs_mariadb
+    image: fcs_mariadb
+    build:
+      dockerfile: Dockerfile
+    ports:
+      - 3306:3306
+    restart: on-failure #always
+    container_name: fcs_mariadb
