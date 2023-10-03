@@ -38,9 +38,9 @@ public class SecurityConfig {
                 .formLogin(AbstractHttpConfigurer::disable)
                 .httpBasic(AbstractHttpConfigurer::disable)
                 .authorizeHttpRequests(auth-> auth
-                        .requestMatchers("/user/**").hasAnyRole("ADMIN","USER","MANAGER")
-                        .requestMatchers("/manager/**").hasAnyRole("ADMIN","MANAGER")
-                        .requestMatchers("/admin/**").hasRole("ADMIN")
+                        .requestMatchers("/user/**").hasAnyRole("ADMIN","USER","GOD")
+                        .requestMatchers("/admin/**").hasAnyRole("ADMIN","GOD")
+                        .requestMatchers("/god/**").hasRole("GOD")
                         .anyRequest().permitAll())
                 .addFilterBefore(jwtAuthorizationFilter, UsernamePasswordAuthenticationFilter.class)
                 .build();
