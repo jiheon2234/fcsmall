@@ -14,5 +14,11 @@ export default defineConfig({
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url))
     }
-  }
+  },
+  build: {
+    outDir: "../src/main/resources",
+  },
+  // server: {
+  //   "/api": "http://localhost:8080",
+  // }
 })
